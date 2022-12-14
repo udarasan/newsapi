@@ -1,15 +1,22 @@
+// @dart=2.9
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../componets/SideNavBar.dart';
+import '../componets/customListTile.dart';
+import '../model/Article.dart';
+import '../service/ApiService.dart';
 
 class CategoryScreen extends StatelessWidget {
-  const CategoryScreen({Key? key}) : super(key: key);
+
+  const CategoryScreen({Key key}) : super(key: key);
+
+  static const List<String> entries = <String>['technology', 'business', 'C'];
 
   @override
   Widget build(BuildContext context) {
+    ApiService client = ApiService();
 
-    final List<String> entries = <String>['technology', 'business', 'C'];
     return Scaffold(
       drawer: SideNavBar(),
       appBar: AppBar(
@@ -22,15 +29,14 @@ class CategoryScreen extends StatelessWidget {
             SizedBox(
               height: 60,
               child: ListView.builder(
-                itemCount: 10,
+                itemCount: entries.length,
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => Container(
+                itemBuilder: (BuildContext context, int index) => Container(
                   height: 150,
                   width: 150,
                   margin: EdgeInsets.all(10),
                   child: Center(
-                    child: Text(
-                      "Card $index",
+                    child: Text('${entries[index]}',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
@@ -38,7 +44,28 @@ class CategoryScreen extends StatelessWidget {
                 ),
               ),
             ),
+            Flexible(
+              child:  FutureBuilder(
+                future: client.getArticle(),
+                builder: (BuildContext context, AsyncSnapshot<List<Article>> snapshot) {
+                  //let's check if we got a response or not
+                  if (snapshot.hasData) {
+                    //Now let's make a list of articles
+                    List<Article> articles = snapshot.data;
+                    return ListView.builder(
+                      //Now let's create our custom List tile
+                      itemCount: articles?.length,
+                      itemBuilder: (context, index) =>
+                          customListTile(articles[index], context),
+                    );
+                  }
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                },
+              ),)
           ]),
+
         ),
       ),
     );
