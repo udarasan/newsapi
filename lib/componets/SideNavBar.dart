@@ -2,6 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../Screen/CategoryScreen.dart';
+
 class SideNavBar extends StatelessWidget {
   const SideNavBar({Key? key}) : super(key: key);
 
@@ -29,27 +31,52 @@ class SideNavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.category),
             title: Text('Popular'),
-            onTap: ()=>null,
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const CategoryScreen())
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.category),
             title: Text('Category'),
-            onTap: ()=>null,
+            onTap: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CategoryScreen())
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.category),
             title: Text('Category'),
-            onTap: ()=>null,
+            onTap: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CategoryScreen())
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.category),
             title: Text('Category'),
-            onTap: ()=>null,
+            onTap: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CategoryScreen())
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.category),
             title: Text('Category'),
-            onTap: ()=>null,
+            onTap: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CategoryScreen())
+              );
+            },
           ),
         ],
       ),
