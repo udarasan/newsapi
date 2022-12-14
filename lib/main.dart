@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:newsapi/service/ApiService.dart';
 
 import 'componets/customListTile.dart';
+import 'componets/SideNavBar.dart';
 import 'model/Article.dart';
 
 void main() {
@@ -33,12 +34,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: SideNavBar(),
       appBar: AppBar(
-        title: Text("News App", style: TextStyle(color: Colors.black)),
-        backgroundColor: Colors.white,
+        title: const Text("News App", style: TextStyle(color: Colors.white)),
+
+        backgroundColor: Colors.red,
       ),
 
-      //Now let's call the APi services with futurebuilder wiget
+
       body: FutureBuilder(
         future: client.getArticle(),
         builder: (BuildContext context, AsyncSnapshot<List<Article>> snapshot) {
