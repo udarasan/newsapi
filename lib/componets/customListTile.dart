@@ -19,7 +19,7 @@ Widget customListTile(Article article, BuildContext context) {
       margin: EdgeInsets.all(12.0),
       padding: EdgeInsets.all(8.0),
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.black,
           boxShadow: [
             BoxShadow(
               color: Colors.black12,
@@ -64,6 +64,7 @@ Widget customListTile(Article article, BuildContext context) {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16.0,
+              color: Colors.white,
             ),
           )
         ],

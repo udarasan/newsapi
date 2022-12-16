@@ -60,7 +60,7 @@ class _CategoryScreen extends State<CategoryScreen>{
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
-                  color: Colors.red[200],
+                  color: Colors.red,
                 ),
               ),
             ),

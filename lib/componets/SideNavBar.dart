@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:newsapi/Screen/PopularScreen.dart';
 import 'package:newsapi/main.dart';
 
 import '../Screen/CategoryScreen.dart';
@@ -55,7 +56,7 @@ class SideNavBar extends StatelessWidget {
             onTap: (){
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const CategoryScreen())
+                  MaterialPageRoute(builder: (context) => const PopularScreen())
               );
             },
           ),
