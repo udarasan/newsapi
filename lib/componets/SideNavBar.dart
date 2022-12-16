@@ -2,6 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapi/Screen/PopularScreen.dart';
+import 'package:newsapi/Screen/ProfileScreen.dart';
+import 'package:newsapi/Screen/SettringScreen.dart';
 import 'package:newsapi/main.dart';
 
 import '../Screen/CategoryScreen.dart';
@@ -61,22 +63,12 @@ class SideNavBar extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.search_rounded),
-            title: Text('Serach'),
+            leading: Icon(Icons.account_box),
+            title: Text('Profile'),
             onTap: (){
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const CategoryScreen())
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.filter),
-            title: Text('Filter'),
-            onTap: (){
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const CategoryScreen())
+                  MaterialPageRoute(builder: (context) => const ProfileScreen())
               );
             },
           ),
