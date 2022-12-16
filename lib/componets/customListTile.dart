@@ -20,7 +20,6 @@ Widget customListTile(Article article, BuildContext context) {
       padding: EdgeInsets.all(8.0),
       decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(12.0),
           boxShadow: [
             BoxShadow(
               color: Colors.black12,
@@ -32,14 +31,14 @@ Widget customListTile(Article article, BuildContext context) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 200.0,
+            height: 100.0,
             width: double.infinity,
             decoration: BoxDecoration(
               //let's add the height
 
               image: DecorationImage(
                   image: NetworkImage(article.urlToImage), fit: BoxFit.cover),
-              borderRadius: BorderRadius.circular(12.0),
+
             ),
           ),
           SizedBox(
@@ -48,8 +47,7 @@ Widget customListTile(Article article, BuildContext context) {
           Container(
             padding: EdgeInsets.all(6.0),
             decoration: BoxDecoration(
-              color: Colors.red,
-              borderRadius: BorderRadius.circular(30.0),
+              color: Colors.red[300],
             ),
             child: Text(
               article.source.name,

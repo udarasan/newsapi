@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:newsapi/main.dart';
 
 import '../Screen/CategoryScreen.dart';
 
@@ -29,12 +30,12 @@ class SideNavBar extends StatelessWidget {
             )
           ),
           ListTile(
-            leading: Icon(Icons.category),
-            title: Text('Popular'),
+            leading: Icon(Icons.home),
+            title: Text('Home'),
             onTap: (){
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const CategoryScreen())
+                MaterialPageRoute(builder: (context) => const HomePage())
               );
             },
           ),
@@ -49,8 +50,8 @@ class SideNavBar extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.category),
-            title: Text('Category'),
+            leading: Icon(Icons.new_label),
+            title: Text('Popular'),
             onTap: (){
               Navigator.push(
                   context,
@@ -59,8 +60,8 @@ class SideNavBar extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.category),
-            title: Text('Category'),
+            leading: Icon(Icons.search_rounded),
+            title: Text('Serach'),
             onTap: (){
               Navigator.push(
                   context,
@@ -69,8 +70,8 @@ class SideNavBar extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.category),
-            title: Text('Category'),
+            leading: Icon(Icons.filter),
+            title: Text('Filter'),
             onTap: (){
               Navigator.push(
                   context,
